@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables, Loops, DOM</title>
+</head>
+<body>
+    <div id="task4"></div>
+<script>
+    let professor = prompt("Who are the lines for?");
+    let lineToWrite = prompt("What is the line?");
+    let numberOfLines = prompt("How many lines?");
+
+numberOfLines = parseInt(numberOfLines);
+
+// Check if the input is a valid number
+if (!isNaN(numberOfLines) && numberOfLines > 0) {
+
+  // Use a while loop to generate the lines HTML
+  let task4_str = "<ul>";
+  let line = 1;
+  while (line <= numberOfLines) {
+    task4_str += `<li>${line} ${lineToWrite}</li>`;
+    line++;
+  }
+  task4_str += "</ul>";
+
+  // Display the lines in the HTML element with id 'task4'
+  let refToTask4Div = document.querySelector("#task4");
+  refToTask4Div.innerHTML = task4_str;
+
+} else {
+  // Display an error message for invalid input
+  alert("Invalid input. Please enter a valid number of lines.");
+}
+    </script>
+</body>
+</html>
